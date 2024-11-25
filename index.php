@@ -33,6 +33,7 @@
             <th class="p-2 text-left text-gray-700">Datum</th>
             <th class="p-2 text-left text-gray-700">Dienst Carola</th>
             <th class="p-2 text-left text-gray-700">Aangevraagd</th>
+            <th class="p-2 text-left text-gray-700">Locoflex</th>
           </tr>
         </thead>
         <tbody id="rooster-body" class="divide-y divide-gray-200">
@@ -56,7 +57,7 @@
 
     <!-- Feedback -->
     <div id="feedback" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg shadow">
-      Opmerkingen succesvol opgeslagen!
+      Gegevens succesvol opgeslagen!
     </div>
   </div>
 

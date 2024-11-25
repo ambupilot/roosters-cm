@@ -12,9 +12,9 @@ if (!is_array($data) || empty($data)) {
 try {
     foreach ($data as $comment) {
         $stmt = $pdo->prepare(
-            "INSERT INTO RoosterCarolas (dagVanDeWeek, startKalenderWeek, roosterWeek, dienst, opmerkingen)
-             VALUES (:dagVanDeWeek, :startKalenderWeek, :roosterWeek, :dienst, :opmerkingen)
-             ON DUPLICATE KEY UPDATE opmerkingen = :opmerkingen"
+            "INSERT INTO RoosterCarolas (dagVanDeWeek, startKalenderWeek, roosterWeek, dienst, opmerkingen, locoflex)
+             VALUES (:dagVanDeWeek, :startKalenderWeek, :roosterWeek, :dienst, :opmerkingen, :locoflex)
+             ON DUPLICATE KEY UPDATE opmerkingen = :opmerkingen, locoflex = :locoflex"
         );
 
         $stmt->execute([
@@ -22,7 +22,8 @@ try {
             ':startKalenderWeek' => $comment['startKalenderWeek'],
             ':roosterWeek' => $comment['roosterWeek'],
             ':dienst' => $comment['dienst'],
-            ':opmerkingen' => $comment['opmerkingen'] !== null ? $comment['opmerkingen'] : "",
+            ':opmerkingen' => $comment['opmerkingen'] ?? "",
+            ':locoflex' => $comment['locoflex'] ?? "",
         ]);
     }
 

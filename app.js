@@ -1,5 +1,6 @@
 let roosters = [];
 let comments = {};
+let locoflexComments = {};
 let isEditable = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -70,6 +71,7 @@ function populateTable(week) {
     .forEach((r) => {
       const key = `${r.startKalenderWeek}-${r.dagVanDeWeek}`;
       comments[key] = comments[key] !== undefined ? comments[key] : r.opmerkingen || "";
+      locoflexComments[key] = locoflexComments[key] !== undefined ? locoflexComments[key] : r.locoflex || "";
 
       const year = new Date().getFullYear();
       const currentDate = dayjs().year(year).isoWeek(week).startOf("isoWeek").add(r.dagVanDeWeek - 1, "day");
@@ -82,6 +84,9 @@ function populateTable(week) {
           <td class="p-2">
             <input type="text" value="${comments[key]}" data-key="${key}" ${!isEditable ? "disabled" : ""} class="w-full p-2 border border-gray-300 rounded-lg">
           </td>
+          <td class="p-2">
+            <input type="text" value="${locoflexComments[key]}" data-locoflex-key="${key}" ${!isEditable ? "disabled" : ""} class="w-full p-2 border border-gray-300 rounded-lg">
+          </td>
         </tr>
       `;
     });
@@ -89,7 +94,14 @@ function populateTable(week) {
   document.querySelectorAll("input[data-key]").forEach((input) => {
     input.addEventListener("input", (e) => {
       const key = e.target.dataset.key;
-      comments[key] = e.target.value !== undefined ? e.target.value : ""; // Sla lege string op als veld leeg is
+      comments[key] = e.target.value;
+    });
+  });
+
+  document.querySelectorAll("input[data-locoflex-key]").forEach((input) => {
+    input.addEventListener("input", (e) => {
+      const key = e.target.dataset.locoflexKey;
+      locoflexComments[key] = e.target.value;
     });
   });
 }
@@ -108,7 +120,8 @@ async function saveComments() {
 
       return {
         ...rooster,
-        opmerkingen: opmerkingen !== undefined ? opmerkingen : "", // Zorg dat opmerkingen altijd aanwezig zijn
+        opmerkingen: opmerkingen || "",
+        locoflex: locoflexComments[key] || "",
       };
     });
 
@@ -118,30 +131,23 @@ async function saveComments() {
       body: JSON.stringify(input),
     });
 
-    if (!response.ok) {
-      throw new Error(`Foutcode: ${response.status}`); // Gooi een fout bij HTTP-foutcodes
-    }
-
     const result = await response.json();
     if (result.success) {
-      showFeedback("Opmerkingen succesvol opgeslagen!", "success");
-    } else if (result.error) {
-      showFeedback(`Opslaan mislukt: ${result.error}`, "error");
+      showFeedback("Gegevens succesvol opgeslagen!", "success");
     } else {
-      showFeedback("Opslaan mislukt zonder duidelijke foutmelding", "error");
+      showFeedback("Opslaan mislukt!", "error");
     }
   } catch (err) {
     console.error("Fout bij opslaan van opmerkingen:", err);
-    showFeedback(`Fout bij opslaan van opmerkingen: ${err.message}`, "error");
+    showFeedback("Fout bij opslaan van opmerkingen", "error");
   } finally {
     saveButton.textContent = "Opslaan";
     saveButton.disabled = false;
   }
 }
 
-
 function updateEditableState() {
-  document.querySelectorAll("input[data-key]").forEach((input) => {
+  document.querySelectorAll("input").forEach((input) => {
     input.disabled = !isEditable;
   });
   document.getElementById("save-button").disabled = !isEditable;
