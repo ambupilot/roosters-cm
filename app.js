@@ -22,9 +22,10 @@ async function fetchAllWeeks() {
     populateWeekSelect();
     const defaultWeek = 51; // Start met week 51
     populateTable(defaultWeek);
-    updateWeekInfo(defaultWeek); // Weekinformatie bijwerken
+    updateWeekInfo(defaultWeek);
   } catch (err) {
-    alert("Fout bij ophalen van gegevens");
+    console.error("Fout bij ophalen van gegevens:", err);
+    showFeedback("Fout bij ophalen van gegevens", "error");
   }
 }
 
@@ -34,10 +35,20 @@ async function fetchWeekData(week) {
     const data = await response.json();
     roosters = data;
     populateTable(week);
-    updateWeekInfo(week); // Weekinformatie bijwerken
+    updateWeekInfo(week);
   } catch (err) {
-    alert("Fout bij ophalen van weekgegevens");
+    console.error("Fout bij ophalen van weekgegevens:", err);
+    showFeedback("Fout bij ophalen van weekgegevens", "error");
   }
+}
+
+function updateWeekInfo(week) {
+  const year = new Date().getFullYear();
+  const startOfWeek = dayjs().year(year).isoWeek(week).startOf("isoWeek");
+  const endOfWeek = dayjs().year(year).isoWeek(week).endOf("isoWeek");
+
+  document.getElementById("current-week").textContent = `Kalenderweek: ${week}`;
+  document.getElementById("week-dates").textContent = `${startOfWeek.format("DD MMMM YYYY")} tot en met ${endOfWeek.format("DD MMMM YYYY")}`;
 }
 
 function populateWeekSelect() {
@@ -64,9 +75,11 @@ function populateTable(week) {
 
       tbody.innerHTML += `
         <tr>
-          <td>${["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"][r.dagVanDeWeek - 1]}</td>
-          <td><input type="text" value="${comments[key]}" data-key="${key}" ${!isEditable ? "disabled" : ""}></td>
-          <td>${r.dienst}</td>
+          <td class="p-2 text-gray-700">${["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"][r.dagVanDeWeek - 1]}</td>
+          <td class="p-2">
+            <input type="text" value="${comments[key]}" data-key="${key}" ${!isEditable ? "disabled" : ""} class="w-full p-2 border border-gray-300 rounded-lg">
+          </td>
+          <td class="p-2 text-gray-700">${r.dienst}</td>
         </tr>
       `;
     });
@@ -82,6 +95,8 @@ function populateTable(week) {
 async function saveComments() {
   const saveButton = document.getElementById("save-button");
   saveButton.textContent = "Opslaan...";
+  saveButton.disabled = true;
+
   try {
     const input = Object.entries(comments).map(([key, opmerkingen]) => {
       const [startKalenderWeek, dagVanDeWeek] = key.split("-");
@@ -100,19 +115,16 @@ async function saveComments() {
 
     const result = await response.json();
     if (result.success) {
-      saveButton.textContent = "Opgeslagen!";
-      const feedback = document.getElementById("feedback");
-      feedback.style.display = "block";
-
-      setTimeout(() => {
-        saveButton.textContent = "Opslaan";
-        feedback.style.display = "none";
-      }, 2000);
+      showFeedback("Opmerkingen succesvol opgeslagen!", "success");
     } else {
-      saveButton.textContent = "Opslaan";
+      showFeedback("Opslaan mislukt!", "error");
     }
   } catch (err) {
+    console.error("Fout bij opslaan van opmerkingen:", err);
+    showFeedback("Fout bij opslaan van opmerkingen", "error");
+  } finally {
     saveButton.textContent = "Opslaan";
+    saveButton.disabled = false;
   }
 }
 
@@ -123,20 +135,10 @@ function updateEditableState() {
   document.getElementById("save-button").disabled = !isEditable;
 }
 
-function updateWeekInfo(week) {
-  // Huidig jaar ophalen
-  const year = new Date().getFullYear();
-
-  // Eerste dag van de week berekenen (maandag)
-  const startOfWeek = dayjs().year(year).isoWeek(week).startOf('isoWeek');
-
-  // Laatste dag van de week berekenen (zondag)
-  const endOfWeek = dayjs().year(year).isoWeek(week).endOf('isoWeek');
-
-  // Update de weekinformatie
-  const weekHeader = document.getElementById("current-week");
-  const weekDates = document.getElementById("week-dates");
-
-  weekHeader.textContent = `Kalenderweek: ${week}`;
-  weekDates.textContent = `${startOfWeek.format("DD MMMM YYYY")} tot en met ${endOfWeek.format("DD MMMM YYYY")}`;
+function showFeedback(message, type) {
+  const feedback = document.getElementById("feedback");
+  feedback.textContent = message;
+  feedback.className = `mt-4 p-4 rounded-lg shadow ${type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`;
+  feedback.style.display = "block";
+  setTimeout(() => (feedback.style.display = "none"), 3000);
 }
