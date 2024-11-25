@@ -376,3 +376,1473 @@ Array
 
 )
 Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [opmerkingen] => 1-52-4
+            [locoflex] => 
+        )
+
+    [8] => Array
+        (
+            [opmerkingen] => sdsd
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [opmerkingen] => Martijn
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => d
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Data succesvol opgeslagen
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => dcxx
+            [locoflex] => cc
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Data succesvol opgeslagen
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [opmerkingen] => 1-52-4
+            [locoflex] => 
+        )
+
+    [8] => Array
+        (
+            [opmerkingen] => sdsd
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [opmerkingen] => Martijn
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [1] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 52
+            [roosterWeek] => 4
+            [dienst] => --
+            [opmerkingen] => 1-52-4
+            [locoflex] => jog
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 52
+            [roosterWeek] => 4
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 52
+            [roosterWeek] => 4
+            [dienst] => R 
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 52
+            [roosterWeek] => 4
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 52
+            [roosterWeek] => 4
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 52
+            [roosterWeek] => 4
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 52
+            [roosterWeek] => 4
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => fg
+            [locoflex] => rr
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [opmerkingen] => 1-52-4
+            [locoflex] => 
+        )
+
+    [8] => Array
+        (
+            [opmerkingen] => sdsd
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [opmerkingen] => Martijn
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [opmerkingen] => 1-52-4
+            [locoflex] => 
+        )
+
+    [8] => Array
+        (
+            [opmerkingen] => sdsd
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [opmerkingen] => Martijn
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [1] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [opmerkingen] => 1-52-4
+            [locoflex] => 
+        )
+
+    [8] => Array
+        (
+            [opmerkingen] => sdsd
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [opmerkingen] => Martijn
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [14] => Array
+        (
+            [id] => 71
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 9
+            [roosterWeek] => 1
+            [dienst] => --
+            [opmerkingen] => 1-9-1
+            [locoflex] => 
+        )
+
+    [15] => Array
+        (
+            [id] => 72
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 9
+            [roosterWeek] => 1
+            [dienst] => --
+            [opmerkingen] => t
+            [locoflex] => 
+        )
+
+    [16] => Array
+        (
+            [id] => 73
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 9
+            [roosterWeek] => 1
+            [dienst] => CO
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [17] => Array
+        (
+            [id] => 74
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 9
+            [roosterWeek] => 1
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [18] => Array
+        (
+            [id] => 75
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 9
+            [roosterWeek] => 1
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [19] => Array
+        (
+            [id] => 76
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 9
+            [roosterWeek] => 1
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [20] => Array
+        (
+            [id] => 77
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 9
+            [roosterWeek] => 1
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => na 17
+            [locoflex] => tot 17
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Data succesvol opgeslagen
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => tot 17
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 51
+            [roosterWeek] => 3
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [opmerkingen] => 1-52-4
+            [locoflex] => 
+        )
+
+    [8] => Array
+        (
+            [opmerkingen] => sdsd
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [opmerkingen] => Martijn
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => tot 17
+        )
+
+    [1] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [opmerkingen] => 1-52-4
+            [locoflex] => 
+        )
+
+    [8] => Array
+        (
+            [opmerkingen] => sdsd
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [opmerkingen] => Martijn
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [14] => Array
+        (
+            [id] => 43
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 5
+            [roosterWeek] => 9
+            [dienst] => --
+            [opmerkingen] => 1-5-9
+            [locoflex] => ffd
+        )
+
+    [15] => Array
+        (
+            [id] => 44
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 5
+            [roosterWeek] => 9
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [16] => Array
+        (
+            [id] => 45
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 5
+            [roosterWeek] => 9
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [17] => Array
+        (
+            [id] => 46
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 5
+            [roosterWeek] => 9
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [18] => Array
+        (
+            [id] => 47
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 5
+            [roosterWeek] => 9
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [19] => Array
+        (
+            [id] => 48
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 5
+            [roosterWeek] => 9
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [20] => Array
+        (
+            [id] => 49
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 5
+            [roosterWeek] => 9
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null
+Array
+(
+)
+Array
+(
+    [0] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => tot 17
+        )
+
+    [1] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [2] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [3] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [4] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [5] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [6] => Array
+        (
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [7] => Array
+        (
+            [id] => 22
+            [dagVanDeWeek] => 1
+            [startKalenderWeek] => 2
+            [roosterWeek] => 6
+            [dienst] => R
+            [opmerkingen] => 1-2-6
+            [locoflex] => k4
+        )
+
+    [8] => Array
+        (
+            [id] => 23
+            [dagVanDeWeek] => 2
+            [startKalenderWeek] => 2
+            [roosterWeek] => 6
+            [dienst] => --
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [9] => Array
+        (
+            [id] => 24
+            [dagVanDeWeek] => 3
+            [startKalenderWeek] => 2
+            [roosterWeek] => 6
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [10] => Array
+        (
+            [id] => 25
+            [dagVanDeWeek] => 4
+            [startKalenderWeek] => 2
+            [roosterWeek] => 6
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [11] => Array
+        (
+            [id] => 26
+            [dagVanDeWeek] => 5
+            [startKalenderWeek] => 2
+            [roosterWeek] => 6
+            [dienst] => R
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [12] => Array
+        (
+            [id] => 27
+            [dagVanDeWeek] => 6
+            [startKalenderWeek] => 2
+            [roosterWeek] => 6
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+    [13] => Array
+        (
+            [id] => 28
+            [dagVanDeWeek] => 7
+            [startKalenderWeek] => 2
+            [roosterWeek] => 6
+            [dienst] => RES
+            [opmerkingen] => 
+            [locoflex] => 
+        )
+
+)
+Fout: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'dagVanDeWeek' cannot be null

@@ -6,11 +6,13 @@ let isEditable = false;
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllWeeks();
 
+  // Bewerken toestaan
   document.getElementById("edit-toggle").addEventListener("change", (e) => {
     isEditable = e.target.value === "aan";
     updateEditableState();
   });
 
+  // Opslaan gegevens
   document.getElementById("save-button").addEventListener("click", saveComments);
 });
 
@@ -112,7 +114,6 @@ async function saveComments() {
   saveButton.disabled = true;
 
   try {
-    // Maak de payload aan voor de backend
     const input = Object.entries(comments).map(([key, opmerkingen]) => {
       const [startKalenderWeek, dagVanDeWeek] = key.split("-");
       const rooster = roosters.find(
@@ -126,31 +127,21 @@ async function saveComments() {
       };
     });
 
-    // Verstuur de payload naar de backend
     const response = await fetch("save_comments.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
     });
 
-    // Controleer of de respons geen HTTP-foutcode bevat
-    if (!response.ok) {
-      throw new Error(`HTTP-foutcode: ${response.status}`);
-    }
-
-    // Verwerk de JSON-respons
     const result = await response.json();
     if (result.success) {
       showFeedback("Gegevens succesvol opgeslagen!", "success");
-    } else if (result.error) {
-      showFeedback(`Opslaan mislukt: ${result.error}`, "error");
     } else {
-      showFeedback("Opslaan mislukt zonder duidelijke foutmelding", "error");
+      showFeedback("Opslaan mislukt!", "error");
     }
   } catch (err) {
-    // Toon een foutmelding als er een netwerk- of serverprobleem is
-    console.error("Fout bij opslaan van opmerkingen:", err);
-    showFeedback(`Fout bij opslaan van gegevens: ${err.message}`, "error");
+    console.error("Fout bij opslaan van gegevens:", err);
+    showFeedback("Fout bij opslaan van gegevens", "error");
   } finally {
     saveButton.textContent = "Opslaan";
     saveButton.disabled = false;
@@ -171,10 +162,7 @@ function showFeedback(message, type) {
     type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
   }`;
 
-  // Toon de melding
   feedback.style.display = "block";
-
-  // Verberg de melding na 3 seconden
   setTimeout(() => {
     feedback.style.display = "none";
   }, 3000);
