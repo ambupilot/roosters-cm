@@ -167,3 +167,52 @@ function showFeedback(message, type) {
     feedback.style.display = "none";
   }, 3000);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchAllWeeks();
+
+  // Bewerken toestaan
+  document.getElementById("edit-toggle").addEventListener("change", (e) => {
+    isEditable = e.target.value === "aan";
+    updateEditableState();
+  });
+
+  // Opslaan gegevens
+  document.getElementById("save-button").addEventListener("click", saveComments);
+
+  // Overzicht genereren
+  document.getElementById("generate-overview-button").addEventListener("click", generateOverview);
+});
+
+function generateOverview() {
+  const selectedWeek = document.getElementById("week-select").value;
+
+  // Haal de data op uit de opgeslagen waarden
+  const overviewData = roosters
+    .filter((r) => Number(r.startKalenderWeek) === Number(selectedWeek))
+    .map((r) => {
+      const day = ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"][r.dagVanDeWeek - 1];
+      const year = new Date().getFullYear();
+      const date = dayjs().year(year).isoWeek(selectedWeek).startOf("isoWeek").add(r.dagVanDeWeek - 1, "day").format("DD-MM-YYYY");
+      const availability = locoflexComments[`${r.startKalenderWeek}-${r.dagVanDeWeek}`] || r.locoflex || "";
+      return { day, date, availability };
+    });
+
+  // Genereer ASCII-stijl tabel
+  const header = "| Dag       | Datum       | Beschikbaarheid  |";
+  const divider = "+-----------+-------------+------------------+";
+  const rows = overviewData.map(({ day, date, availability }) =>
+    `| ${day.padEnd(9)} | ${date.padEnd(11)} | ${availability.padEnd(16)} |`
+  );
+
+  const content = [divider, header, divider, ...rows, divider].join("\n");
+
+  // Download het bestand
+  const blob = new Blob([content], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `Overzicht_Week_${selectedWeek}.txt`;
+  a.click();
+  URL.revokeObjectURL(url);
+}

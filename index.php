@@ -41,10 +41,13 @@
       </table>
     </div>
 
-    <!-- Opslaan Knop en Bewerken Toggle -->
-    <div class="flex justify-between items-center mt-4">
-      <button id="save-button" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 disabled:bg-gray-300" disabled>
+    <!-- Opslaan en Overzicht Genereren Knoppen -->
+    <div class="flex flex-col sm:flex-row justify-between items-center mt-4">
+      <button id="save-button" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 disabled:bg-gray-300 mb-4 sm:mb-0" disabled>
         Opslaan
+      </button>
+      <button id="generate-overview-button" class="bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600">
+        Overzicht Genereren
       </button>
       <div>
         <label for="edit-toggle" class="text-gray-700 font-medium">Bewerken toestaan:</label>
