@@ -1,7 +1,6 @@
 let roosters = [];
 let comments = {};
 let isEditable = false;
-let lastSelectedWeek = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllWeeks();
@@ -59,7 +58,6 @@ function populateWeekSelect() {
   select.addEventListener("change", (e) => {
     const selectedWeek = parseInt(e.target.value);
     fetchWeekData(selectedWeek);
-    lastSelectedWeek = selectedWeek;
   });
 }
 
@@ -71,15 +69,19 @@ function populateTable(week) {
     .filter((r) => Number(r.startKalenderWeek) === week)
     .forEach((r) => {
       const key = `${r.startKalenderWeek}-${r.dagVanDeWeek}`;
-      comments[key] = r.opmerkingen || "";
+      comments[key] = comments[key] !== undefined ? comments[key] : r.opmerkingen || "";
+
+      const year = new Date().getFullYear();
+      const currentDate = dayjs().year(year).isoWeek(week).startOf("isoWeek").add(r.dagVanDeWeek - 1, "day");
 
       tbody.innerHTML += `
         <tr>
           <td class="p-2 text-gray-700">${["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"][r.dagVanDeWeek - 1]}</td>
+          <td class="p-2 text-gray-700">${currentDate.format("DD MMMM YYYY")}</td>
+          <td class="p-2 text-gray-700">${r.dienst}</td>
           <td class="p-2">
             <input type="text" value="${comments[key]}" data-key="${key}" ${!isEditable ? "disabled" : ""} class="w-full p-2 border border-gray-300 rounded-lg">
           </td>
-          <td class="p-2 text-gray-700">${r.dienst}</td>
         </tr>
       `;
     });
@@ -87,7 +89,7 @@ function populateTable(week) {
   document.querySelectorAll("input[data-key]").forEach((input) => {
     input.addEventListener("input", (e) => {
       const key = e.target.dataset.key;
-      comments[key] = e.target.value.slice(0, 12);
+      comments[key] = e.target.value !== undefined ? e.target.value : ""; // Sla lege string op als veld leeg is
     });
   });
 }
@@ -104,7 +106,10 @@ async function saveComments() {
         (r) => r.startKalenderWeek == startKalenderWeek && r.dagVanDeWeek == dagVanDeWeek
       );
 
-      return { ...rooster, opmerkingen };
+      return {
+        ...rooster,
+        opmerkingen: opmerkingen !== undefined ? opmerkingen : "", // Zorg dat opmerkingen altijd aanwezig zijn
+      };
     });
 
     const response = await fetch("save_comments.php", {
@@ -113,20 +118,27 @@ async function saveComments() {
       body: JSON.stringify(input),
     });
 
+    if (!response.ok) {
+      throw new Error(`Foutcode: ${response.status}`); // Gooi een fout bij HTTP-foutcodes
+    }
+
     const result = await response.json();
     if (result.success) {
       showFeedback("Opmerkingen succesvol opgeslagen!", "success");
+    } else if (result.error) {
+      showFeedback(`Opslaan mislukt: ${result.error}`, "error");
     } else {
-      showFeedback("Opslaan mislukt!", "error");
+      showFeedback("Opslaan mislukt zonder duidelijke foutmelding", "error");
     }
   } catch (err) {
     console.error("Fout bij opslaan van opmerkingen:", err);
-    showFeedback("Fout bij opslaan van opmerkingen", "error");
+    showFeedback(`Fout bij opslaan van opmerkingen: ${err.message}`, "error");
   } finally {
     saveButton.textContent = "Opslaan";
     saveButton.disabled = false;
   }
 }
+
 
 function updateEditableState() {
   document.querySelectorAll("input[data-key]").forEach((input) => {
@@ -138,7 +150,11 @@ function updateEditableState() {
 function showFeedback(message, type) {
   const feedback = document.getElementById("feedback");
   feedback.textContent = message;
-  feedback.className = `mt-4 p-4 rounded-lg shadow ${type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`;
+  feedback.className = `mt-4 p-4 rounded-lg shadow ${
+    type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
+  }`;
   feedback.style.display = "block";
-  setTimeout(() => (feedback.style.display = "none"), 3000);
+  setTimeout(() => {
+    feedback.style.display = "none";
+  }, 3000);
 }

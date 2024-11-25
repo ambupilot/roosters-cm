@@ -5,7 +5,7 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 if (!is_array($data) || empty($data)) {
     http_response_code(400);
-    echo json_encode(['error' => 'Ongeldige invoer']);
+    echo json_encode(['success' => false, 'error' => 'Ongeldige invoer']);
     exit;
 }
 
@@ -22,13 +22,13 @@ try {
             ':startKalenderWeek' => $comment['startKalenderWeek'],
             ':roosterWeek' => $comment['roosterWeek'],
             ':dienst' => $comment['dienst'],
-            ':opmerkingen' => $comment['opmerkingen'],
+            ':opmerkingen' => $comment['opmerkingen'] !== null ? $comment['opmerkingen'] : "",
         ]);
     }
 
-    echo json_encode(['success' => true, 'message' => 'Opmerkingen succesvol opgeslagen']);
+    echo json_encode(['success' => true]);
 } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Fout bij opslaan: ' . $e->getMessage()]);
+    echo json_encode(['success' => false, 'error' => 'Fout bij opslaan: ' . $e->getMessage()]);
 }
 ?>

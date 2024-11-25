@@ -30,8 +30,9 @@
         <thead class="bg-gray-200">
           <tr>
             <th class="p-2 text-left text-gray-700">Dag</th>
+            <th class="p-2 text-left text-gray-700">Datum</th>
+            <th class="p-2 text-left text-gray-700">Dienst Carola</th>
             <th class="p-2 text-left text-gray-700">Opmerkingen</th>
-            <th class="p-2 text-left text-gray-700">Dienst</th>
           </tr>
         </thead>
         <tbody id="rooster-body" class="divide-y divide-gray-200">
@@ -40,7 +41,7 @@
     </div>
 
     <!-- Opslaan Knop en Bewerken Toggle -->
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center mt-4">
       <button id="save-button" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 disabled:bg-gray-300" disabled>
         Opslaan
       </button>
