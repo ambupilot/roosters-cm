@@ -112,6 +112,7 @@ async function saveComments() {
   saveButton.disabled = true;
 
   try {
+    // Maak de payload aan voor de backend
     const input = Object.entries(comments).map(([key, opmerkingen]) => {
       const [startKalenderWeek, dagVanDeWeek] = key.split("-");
       const rooster = roosters.find(
@@ -125,21 +126,31 @@ async function saveComments() {
       };
     });
 
+    // Verstuur de payload naar de backend
     const response = await fetch("save_comments.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
     });
 
+    // Controleer of de respons geen HTTP-foutcode bevat
+    if (!response.ok) {
+      throw new Error(`HTTP-foutcode: ${response.status}`);
+    }
+
+    // Verwerk de JSON-respons
     const result = await response.json();
     if (result.success) {
       showFeedback("Gegevens succesvol opgeslagen!", "success");
+    } else if (result.error) {
+      showFeedback(`Opslaan mislukt: ${result.error}`, "error");
     } else {
-      showFeedback("Opslaan mislukt!", "error");
+      showFeedback("Opslaan mislukt zonder duidelijke foutmelding", "error");
     }
   } catch (err) {
+    // Toon een foutmelding als er een netwerk- of serverprobleem is
     console.error("Fout bij opslaan van opmerkingen:", err);
-    showFeedback("Fout bij opslaan van opmerkingen", "error");
+    showFeedback(`Fout bij opslaan van gegevens: ${err.message}`, "error");
   } finally {
     saveButton.textContent = "Opslaan";
     saveButton.disabled = false;
@@ -159,7 +170,11 @@ function showFeedback(message, type) {
   feedback.className = `mt-4 p-4 rounded-lg shadow ${
     type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
   }`;
+
+  // Toon de melding
   feedback.style.display = "block";
+
+  // Verberg de melding na 3 seconden
   setTimeout(() => {
     feedback.style.display = "none";
   }, 3000);

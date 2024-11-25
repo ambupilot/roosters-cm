@@ -82,6 +82,14 @@
       "rFN" : 0,
       "uCM" : 0
     },
+    "\/save_comments_debug.log" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/save_comments_debug.log",
+      "oF" : 0
+    },
     "\/save_comments_log.txt" : {
       "cB" : 0,
       "ft" : 8192,

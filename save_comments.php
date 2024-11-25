@@ -1,8 +1,15 @@
 <?php
 require 'config.php';
 
+// Log de ontvangen data
+file_put_contents("save_comments_debug.log", print_r($_POST, true), FILE_APPEND);
+
 $data = json_decode(file_get_contents("php://input"), true);
 
+// Log de JSON-decoding voor debugging
+file_put_contents("save_comments_debug.log", print_r($data, true), FILE_APPEND);
+
+// Controleer of de invoer geldig is
 if (!is_array($data) || empty($data)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'error' => 'Ongeldige invoer']);
@@ -27,8 +34,16 @@ try {
         ]);
     }
 
+    // Log een succesvolle invoer
+    file_put_contents("save_comments_debug.log", "Data succesvol opgeslagen\n", FILE_APPEND);
+
+    // Retourneer een succesvolle respons
     echo json_encode(['success' => true]);
 } catch (Exception $e) {
+    // Log de foutmelding
+    file_put_contents("save_comments_debug.log", "Fout: " . $e->getMessage() . PHP_EOL, FILE_APPEND);
+
+    // Retourneer een foutmelding bij een uitzondering
     http_response_code(500);
     echo json_encode(['success' => false, 'error' => 'Fout bij opslaan: ' . $e->getMessage()]);
 }
