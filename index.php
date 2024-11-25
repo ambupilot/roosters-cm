@@ -32,7 +32,7 @@
             <th class="p-2 text-left text-gray-700">Dag</th>
             <th class="p-2 text-left text-gray-700">Datum</th>
             <th class="p-2 text-left text-gray-700">Dienst Carola</th>
-            <th class="p-2 text-left text-gray-700">Opmerkingen</th>
+            <th class="p-2 text-left text-gray-700">Aangevraagd</th>
           </tr>
         </thead>
         <tbody id="rooster-body" class="divide-y divide-gray-200">
