@@ -1,9 +1,10 @@
 let roosters = [];
 let comments = {};
 let isEditable = false;
+let lastSelectedWeek = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchRoosters();
+  fetchAllWeeks();
 
   document.getElementById("edit-toggle").addEventListener("change", (e) => {
     isEditable = e.target.value === "aan";
@@ -13,15 +14,29 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("save-button").addEventListener("click", saveComments);
 });
 
-async function fetchRoosters() {
+async function fetchAllWeeks() {
   try {
     const response = await fetch("get_roosters.php");
-    roosters = await response.json();
-
+    const data = await response.json();
+    roosters = data;
     populateWeekSelect();
-    populateTable(51);
+    const defaultWeek = 51; // Start met week 51
+    populateTable(defaultWeek);
+    updateWeekInfo(defaultWeek); // Weekinformatie bijwerken
   } catch (err) {
     alert("Fout bij ophalen van gegevens");
+  }
+}
+
+async function fetchWeekData(week) {
+  try {
+    const response = await fetch(`get_roosters.php?week=${week}`);
+    const data = await response.json();
+    roosters = data;
+    populateTable(week);
+    updateWeekInfo(week); // Weekinformatie bijwerken
+  } catch (err) {
+    alert("Fout bij ophalen van weekgegevens");
   }
 }
 
@@ -30,7 +45,11 @@ function populateWeekSelect() {
   const select = document.getElementById("week-select");
 
   select.innerHTML = weeks.map((week) => `<option value="${week}">Week ${week}</option>`).join("");
-  select.addEventListener("change", (e) => populateTable(parseInt(e.target.value)));
+  select.addEventListener("change", (e) => {
+    const selectedWeek = parseInt(e.target.value);
+    fetchWeekData(selectedWeek);
+    lastSelectedWeek = selectedWeek;
+  });
 }
 
 function populateTable(week) {
@@ -38,7 +57,7 @@ function populateTable(week) {
   tbody.innerHTML = "";
 
   roosters
-    .filter((r) => r.startKalenderWeek === week)
+    .filter((r) => Number(r.startKalenderWeek) === week)
     .forEach((r) => {
       const key = `${r.startKalenderWeek}-${r.dagVanDeWeek}`;
       comments[key] = r.opmerkingen || "";
@@ -55,12 +74,14 @@ function populateTable(week) {
   document.querySelectorAll("input[data-key]").forEach((input) => {
     input.addEventListener("input", (e) => {
       const key = e.target.dataset.key;
-      comments[key] = e.target.value.slice(0, 12); // Max 12 tekens
+      comments[key] = e.target.value.slice(0, 12);
     });
   });
 }
 
 async function saveComments() {
+  const saveButton = document.getElementById("save-button");
+  saveButton.textContent = "Opslaan...";
   try {
     const input = Object.entries(comments).map(([key, opmerkingen]) => {
       const [startKalenderWeek, dagVanDeWeek] = key.split("-");
@@ -78,10 +99,20 @@ async function saveComments() {
     });
 
     const result = await response.json();
-    if (result.success) alert("Opmerkingen succesvol opgeslagen!");
-    else alert("Opslaan mislukt");
+    if (result.success) {
+      saveButton.textContent = "Opgeslagen!";
+      const feedback = document.getElementById("feedback");
+      feedback.style.display = "block";
+
+      setTimeout(() => {
+        saveButton.textContent = "Opslaan";
+        feedback.style.display = "none";
+      }, 2000);
+    } else {
+      saveButton.textContent = "Opslaan";
+    }
   } catch (err) {
-    alert("Fout bij opslaan van opmerkingen");
+    saveButton.textContent = "Opslaan";
   }
 }
 
@@ -90,4 +121,22 @@ function updateEditableState() {
     input.disabled = !isEditable;
   });
   document.getElementById("save-button").disabled = !isEditable;
+}
+
+function updateWeekInfo(week) {
+  // Huidig jaar ophalen
+  const year = new Date().getFullYear();
+
+  // Eerste dag van de week berekenen (maandag)
+  const startOfWeek = dayjs().year(year).isoWeek(week).startOf('isoWeek');
+
+  // Laatste dag van de week berekenen (zondag)
+  const endOfWeek = dayjs().year(year).isoWeek(week).endOf('isoWeek');
+
+  // Update de weekinformatie
+  const weekHeader = document.getElementById("current-week");
+  const weekDates = document.getElementById("week-dates");
+
+  weekHeader.textContent = `Kalenderweek: ${week}`;
+  weekDates.textContent = `${startOfWeek.format("DD MMMM YYYY")} tot en met ${endOfWeek.format("DD MMMM YYYY")}`;
 }

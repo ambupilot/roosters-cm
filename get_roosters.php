@@ -2,8 +2,15 @@
 require 'config.php';
 
 try {
-    $stmt = $pdo->prepare("SELECT * FROM RoosterCarolas");
-    $stmt->execute();
+    if (isset($_GET['week'])) {
+        $week = intval($_GET['week']);
+        $stmt = $pdo->prepare("SELECT * FROM RoosterCarolas WHERE startKalenderWeek = :week");
+        $stmt->execute([':week' => $week]);
+    } else {
+        $stmt = $pdo->prepare("SELECT * FROM RoosterCarolas");
+        $stmt->execute();
+    }
+
     $roosters = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     header('Content-Type: application/json');
